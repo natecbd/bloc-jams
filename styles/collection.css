@@ -37,3 +37,7 @@ body.collection {
 .collection-album-container img {
     width: 80%;
 }
+
+.navbar-link:hover {
+    rgb(233,50,117);
+}
