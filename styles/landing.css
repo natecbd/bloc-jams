@@ -13,6 +13,7 @@ body.landing {
  
 .hero-content .hero-title {
     top: 40%;
+    position: absolute;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     transform: translateY(-50%);
