@@ -66,8 +66,8 @@ body.album {
     color: rgb(210, 40, 123);
     border-radius: 50% 50%;
     display: inline-block;
-    width: 28px;
-    height: 28px;
+    width: 25px;
+    height: 25px;
 }
 
 .album-song-button:hover {
@@ -85,7 +85,13 @@ body.album {
 }
 
 .album-song-listing td {
-    vertical-align: middle;
+/*    vertical-align: middle;*/
+    margin-top: 6px;
+
+}
+
+.ion-play {
+    vertical-align:  middle;
 }
 
 /* #2 */
