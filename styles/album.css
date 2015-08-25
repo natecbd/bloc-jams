@@ -94,6 +94,10 @@ body.album {
     vertical-align:  middle;
 }
 
+.ion-pause {
+    vertical-align: middle;
+}
+
 /* #2 */
 @media (max-width: 40rem) and (min-width: 20rem) {
     .album-view-details {
