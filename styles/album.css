@@ -4,6 +4,12 @@ body.album {
     background-position: center center;
     background-size: cover;
     padding-bottom: 150px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
  
 .album-cover-art {
@@ -98,7 +104,6 @@ body.album {
 .ion-pause {
     vertical-align: middle;
 }
-
 /* #2 */
 @media (max-width: 40rem) and (min-width: 20rem) {
     .album-view-details {
