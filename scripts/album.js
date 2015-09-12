@@ -1,5 +1,7 @@
 var createSongRow = function (songNumber, songName, songLength) {
     
+    filterTimeCode(songLength);
+    
     var template = 
           '<tr class="album-view-song-item">' 
         + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
@@ -201,7 +203,7 @@ var updatePlayerBarSong = function () {
     $('.currently-playing .artist-name').text(currentAlbum.artist);
     
     $('.left-controls .play-pause').html(playerBarPauseButton);
-    
+    setTotalTimeInPlayerBar(currentSongFromAlbum.length);
 };
 
 var updateSeekBarWhileSongPlays = function() {
@@ -214,6 +216,7 @@ var updateSeekBarWhileSongPlays = function() {
             var $seekBar = $('.seek-control .seek-bar');
  
             updateSeekPercentage($seekBar, seekBarFillRatio);
+            setCurrentTimeInPlayerBar(this.getTime());
         });
     }
  
@@ -277,6 +280,23 @@ var setupSeekBars = function() {
            $(document).unbind('mouseup.thumb');
        });
     });
+};
+
+var setCurrentTimeInPlayerBar = function(currentTime) {
+    $('.current-time').text(filterTimeCode(currentTime));
+};
+
+var setTotalTimeInPlayerBar = function(totalTime) {
+    $('.total-time').text(totalTime);
+};
+
+var filterTimeCode = function(timeInSeconds) {
+    timeInSeconds = Math.floor(parseFloat(timeInSeconds));
+    var wholeMinutes = Math.floor(timeInSeconds / 60);
+    var wholeSeconds = timeInSeconds % 60;
+    var onesPlace = wholeSeconds % 10;
+    var tensPlace = Math.floor(wholeSeconds / 10);
+    return wholeMinutes + ":" + tensPlace + onesPlace;
 };
 
 var albumList = [albumPicasso, albumMarconi, albumHomework]
